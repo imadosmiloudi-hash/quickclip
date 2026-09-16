@@ -1,0 +1,29 @@
+# Node
+node_modules/
+dist/
+coverage/
+backend/storage/
+.env
+.env.local
+*.log
+npm-debug.log*
+
+# Android
+.gradle/
+**/build/
+local.properties
+*.iml
+.idea/
+.cxx/
+captures/
+*.apk
+*.aab
+*.ap_
+*.dex
+.DS_Store
+
+# Keep wrapper
+!android/gradle/wrapper/gradle-wrapper.jar
+
+# OS
+Thumbs.db
