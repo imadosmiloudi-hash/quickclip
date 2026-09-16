@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import { config } from './config.js';
 import { errorHandler } from './middleware/errorHandler.js';
+import { rootRouter } from './routes/root.js';
 import { healthRouter } from './routes/health.js';
 import { authRouter } from './routes/auth.js';
 import { foldersRouter } from './routes/folders.js';
@@ -31,6 +32,7 @@ export function createApp() {
     })
   );
 
+  app.use(rootRouter);
   app.use(healthRouter);
   app.use('/auth', authRouter);
   app.use('/folders', foldersRouter);

@@ -17,3 +17,13 @@ describe('GET /health', () => {
     expect(res.body.service).toBe('quickclip-backend');
   });
 });
+
+describe('GET /', () => {
+  it('returns API info JSON', async () => {
+    const app = createApp();
+    const res = await request(app).get('/').set('Accept', 'application/json');
+    expect(res.status).toBe(200);
+    expect(res.body.name).toBe('QUICKCLIP API');
+    expect(res.body.health).toBe('/health');
+  });
+});
